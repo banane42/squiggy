@@ -34,8 +34,5 @@ for i, row in enumerate(reader):
 		(row[0], row[1], row[2])
 	)
 
-# cur.execute("SELECT * FROM factions;")
-# print(cur.fetchall())
 conn.commit()
-
 conn.close()
