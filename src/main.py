@@ -1,29 +1,33 @@
 import csv
 import requests
 
-print("\n\n\n+++++++++++++++++++++++++\nBegin Local CSV process\n+++++++++++++++++++++++++\n\n\n")
+b = "false"
+con_b = bool(b)
+print(con_b)
 
-with open('/Users/gjmorris/Downloads/wahapedia_export/Datasheets_models.csv', 'r') as csvfile:
-	reader = csv.reader(csvfile, delimiter='|')
-	for row in reader:
-		print("--------------------------")
-		col_str = ""
-		for column in row:
-			col_str += str(column) + "+"
-		print(col_str)
+# print("\n\n\n+++++++++++++++++++++++++\nBegin Local CSV process\n+++++++++++++++++++++++++\n\n\n")
 
-print("\n\n\n+++++++++++++++++++++++++\nBegin HTTP Request CSV Process\n+++++++++++++++++++++++++\n\n\n")
+# with open('/Users/gjmorris/Downloads/wahapedia_export/Datasheets_models.csv', 'r') as csvfile:
+# 	reader = csv.reader(csvfile, delimiter='|')
+# 	for row in reader:
+# 		print("--------------------------")
+# 		col_str = ""
+# 		for column in row:
+# 			col_str += str(column) + "+"
+# 		print(col_str)
 
-response = requests.get(
-	url='http://wahapedia.ru/wh40k10ed/Datasheets_models.csv'
-)
+# print("\n\n\n+++++++++++++++++++++++++\nBegin HTTP Request CSV Process\n+++++++++++++++++++++++++\n\n\n")
 
-decoded_content = response.content.decode('utf-8')
+# response = requests.get(
+# 	url='http://wahapedia.ru/wh40k10ed/Datasheets_models.csv'
+# )
 
-reader = csv.reader(decoded_content.splitlines(), delimiter='|')
-for row in reader:
-	print("--------------------------")
-	col_str = ""
-	for column in row:
-		col_str += str(column) + "+"
-	print(col_str)
+# decoded_content = response.content.decode('utf-8')
+
+# reader = csv.reader(decoded_content.splitlines(), delimiter='|')
+# for row in reader:
+# 	print("--------------------------")
+# 	col_str = ""
+# 	for column in row:
+# 		col_str += str(column) + "+"
+# 	print(col_str)
