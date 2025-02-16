@@ -52,8 +52,6 @@ for i, row in enumerate(reader):
 	if i == 0:
 		continue
 
-	print("Inserting\n", row)
-
 	id = int(row[0])
 
 	source_id = 0
