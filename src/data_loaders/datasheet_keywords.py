@@ -47,11 +47,11 @@ for i, row in enumerate(reader):
 
 	cursor.execute(
 	"""
-    INSERT INTO datasheets_keywords (datasheet_id, keyword, model, is_faction_keyword)
-    VALUES (%s, %s, %s, %s)
-    ON DUPLICATE KEY UPDATE
-        model = VALUES(model),
-        is_faction_keyword = VALUES(is_faction_keyword);
+		INSERT INTO datasheets_keywords (datasheet_id, keyword, model, is_faction_keyword)
+		VALUES (%s, %s, %s, %s)
+		ON DUPLICATE KEY UPDATE
+			model = VALUES(model),
+			is_faction_keyword = VALUES(is_faction_keyword);
 	""",
 		(id, row[1], row[2], is_faction_keyword)
 	)
