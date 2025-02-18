@@ -37,7 +37,7 @@ decoded_content = response.content.decode('utf-8')
 reader = csv.reader(decoded_content.splitlines(), delimiter='|')
 for i, row in enumerate(reader):
 	if i == 0:
-		continue
+		row=("CORE", "Core", "")
 
 	cursor.execute(
 	"""

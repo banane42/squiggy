@@ -20,20 +20,20 @@ conn = pymysql.connect(
 cursor: pymysql.cursors.DictCursor = conn.cursor()
 cursor.execute(
 """
-	CREATE TABLE IF NOT EXISTS Abilities (
+	CREATE TABLE IF NOT EXISTS abilities (
 		id INT UNSIGNED,
 		name VARCHAR(64) NOT NULL,
 		legend TEXT,
 		faction_id VARCHAR(4),
 		description TEXT,
-		PRIMARY KEY (id, name, faction_id),
-		FOREIGN KEY (faction_id) REFERENCES Factions(id)
+		PRIMARY KEY (id, faction_id),
+		FOREIGN KEY (faction_id) REFERENCES factions(id)
 	);
 """
 )
 
 response = requests.get(
-	url='http://wahapedia.ru/wh40k10ed/{FILL IN HERE}.csv'
+	url='http://wahapedia.ru/wh40k10ed/Abilities.csv'
 )
 
 decoded_content = response.content.decode('utf-8')
@@ -43,10 +43,21 @@ for i, row in enumerate(reader):
 	if i == 0:
 		continue
 
+	id = int(row[0])
+	faction_id = row[3]
+	if faction_id == "":
+		faction_id = "CORE"
+
 	cursor.execute(
 	"""
+		INSERT INTO Abilities (id, name, legend, faction_id, description)
+		VALUES (%s, %s, %s, %s, %s)
+		ON DUPLICATE KEY UPDATE
+			name = VALUES(name),
+			legend = VALUES(legend),
+			description = VALUES(description);
 	""",
-		()
+		(id, row[1], row[2], faction_id, row[4])
 	)
 
 cursor.close()

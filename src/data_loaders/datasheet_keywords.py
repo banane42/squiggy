@@ -26,7 +26,7 @@ cursor.execute(
 		model TEXT,
 		is_faction_keyword BOOLEAN DEFAULT FALSE,
 		PRIMARY KEY (datasheet_id, keyword),
-		FOREIGN KEY (datasheet_id) REFERENCES datasheets(id) ON DELETE CASCADE
+		FOREIGN KEY (datasheet_id) REFERENCES datasheets(id)
 	);
 """
 )
