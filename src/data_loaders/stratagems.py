@@ -48,6 +48,9 @@ for i, row in enumerate(reader):
 
 	id = int(row[1])
 	cp_cost = int(row[4])
+	faction_id = row[0]
+	if faction_id == "":
+		faction_id = "CORE"
 
 	cursor.execute(
 	"""
@@ -66,7 +69,7 @@ for i, row in enumerate(reader):
 			description = VALUES(description),
 			detachment = VALUES(detachment);
 	""",
-		(id, row[0], row[2], row[3], cp_cost, row[5], row[6], row[7], row[8], row[9])
+		(id, faction_id, row[2], row[3], cp_cost, row[5], row[6], row[7], row[8], row[9])
 	)
 
 cursor.close()
