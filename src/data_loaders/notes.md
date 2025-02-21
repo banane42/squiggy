@@ -10,7 +10,7 @@ Exection Order
 
 - [x] datasheets.py
 - [x] datasheets_keywords.py
-- [ ] datasheets_abilities.py
+- [x] datasheets_abilities.py
 - [ ] datasheets_models.py
 - [ ] datasheets_options
 - [ ] datasheets_wargear
