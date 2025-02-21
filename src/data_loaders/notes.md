@@ -5,7 +5,7 @@ Exection Order
 - [x] stratagems
 - [x] abilities
 - [x] enhancements
-- [ ] detachement_abilities
+- [x] detachement_abilities
 - [ ] last_update
 
 - [x] datasheets.py
