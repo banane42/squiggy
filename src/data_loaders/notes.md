@@ -11,7 +11,7 @@ Exection Order
 - [x] datasheets.py
 - [x] datasheets_keywords.py
 - [x] datasheets_abilities.py
-- [ ] datasheets_models.py
+- [x] datasheets_models.py
 - [ ] datasheets_options
 - [ ] datasheets_wargear
 - [ ] datasheets_unit_composition
