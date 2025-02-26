@@ -12,7 +12,7 @@ Exection Order
 - [x] datasheets_keywords.py
 - [x] datasheets_abilities.py
 - [x] datasheets_models.py
-- [ ] datasheets_options
+- [x] datasheets_options
 - [ ] datasheets_wargear
 - [ ] datasheets_unit_composition
 - [ ] datasheets_models_cost
