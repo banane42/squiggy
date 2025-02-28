@@ -45,7 +45,6 @@ for i, row in enumerate(reader):
 		# Some datasheets do not have a source, insert blank source for foreign key
 		row = (0, '', '', '', '', '1.01.1000 0:00:00', '')
 	
-	print(row)
 	id = int(row[0])
 	date = datetime.strptime(row[5], "%d.%m.%Y %H:%M:%S").strftime("%Y-%m-%d")
 
