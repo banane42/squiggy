@@ -15,7 +15,7 @@ Exection Order
 - [x] datasheets_options
 - [ ] datasheets_wargear
 - [x] datasheets_unit_composition
-- [ ] datasheets_models_cost
+- [x] datasheets_models_cost
 - [ ] datasheets_stratagems
 - [ ] datasheets_enhancements
 - [ ] datasheets_detachement_abilities

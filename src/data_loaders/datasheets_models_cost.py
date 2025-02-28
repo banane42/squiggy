@@ -20,14 +20,18 @@ conn = pymysql.connect(
 cursor: pymysql.cursors.DictCursor = conn.cursor()
 cursor.execute(
 """
-	CREATE TABLE IF NOT EXISTS {TABLE HERE} (
-		PRIMARY KEY ()
+	CREATE TABLE IF NOT EXISTS datasheets_models_cost (
+		datasheet_id INT UNSIGNED NOT NULL,
+		line TINYINT UNSIGNED,
+		description TEXT,
+		cost SMALLINT UNSIGNED,
+		PRIMARY KEY (datasheet_id, line)
 	);
 """
 )
 
 response = requests.get(
-	url='http://wahapedia.ru/wh40k10ed/{FILL IN HERE}.csv'
+	url='http://wahapedia.ru/wh40k10ed/Datasheets_models_cost.csv'
 )
 
 decoded_content = response.content.decode('utf-8')
@@ -37,17 +41,21 @@ for i, row in enumerate(reader):
 	if i == 0:
 		continue
 
+	id = int(row[0])
+	line = int(row[1])
+	cost = int(row[3])
+
 	cursor.execute(
 	"""
-		INSERT INTO {TABLE HERE} (
-
+		INSERT INTO datasheets_models_cost (
+			datasheet_id, line, description, cost
 		)
-		VALUES ()
+		VALUES (%s, %s, %s, %s)
 		ON DUPLICATE KEY UPDATE
-			column = VALUES(column),
-			column = VALUES(column);
+			description = VALUES(description),
+			cost = VALUES(cost);
 	""",
-		()
+		(id, line, row[2], cost)
 	)
 
 cursor.close()
