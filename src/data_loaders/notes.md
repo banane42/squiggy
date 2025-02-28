@@ -14,7 +14,7 @@ Exection Order
 - [x] datasheets_models.py
 - [x] datasheets_options
 - [ ] datasheets_wargear
-- [ ] datasheets_unit_composition
+- [x] datasheets_unit_composition
 - [ ] datasheets_models_cost
 - [ ] datasheets_stratagems
 - [ ] datasheets_enhancements
