@@ -13,10 +13,10 @@ Exection Order
 - [x] datasheets_abilities.py
 - [x] datasheets_models.py
 - [x] datasheets_options
-- [ ] datasheets_wargear
+- [x] datasheets_wargear
 - [x] datasheets_unit_composition
 - [x] datasheets_models_cost
-- [ ] datasheets_stratagems
+- [x] datasheets_stratagems
 - [ ] datasheets_enhancements
 - [ ] datasheets_detachement_abilities
 - [ ] datasheets_leader

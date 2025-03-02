@@ -40,7 +40,7 @@ reader = csv.reader(decoded_content.splitlines(), delimiter='|')
 for i, row in enumerate(reader):
 	if i == 0:
 		continue
-
+	
 	datasheet_id = int(row[0])
 	stratagem_id = int(row[1])
 
@@ -55,11 +55,6 @@ for i, row in enumerate(reader):
 	""",
 		(datasheet_id, stratagem_id)
 	)
-
-
-		# ON DUPLICATE KEY UPDATE
-		# 	datasheet_id = VALUES(datasheet_id),
-		# 	stratagem_id = VALUES(stratagem_id);
 
 cursor.close()
 conn.close()
