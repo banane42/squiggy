@@ -20,20 +20,18 @@ conn = pymysql.connect(
 cursor: pymysql.cursors.DictCursor = conn.cursor()
 cursor.execute(
 """
-	CREATE TABLE IF NOT EXISTS enhancements (
-		id INT UNSIGNED PRIMARY KEY,
-		faction_id VARCHAR(4),
-		name TEXT,
-		cost SMALLINT UNSIGNED,
-		detachment TEXT,
-		legend TEXT,
-		description TEXT
+	CREATE TABLE IF NOT EXISTS datasheets_enhancements (
+		datasheet_id INT UNSIGNED,
+		enhancement_id INT UNSIGNED,
+		PRIMARY KEY (datasheet_id, enhancement_id),
+		FOREIGN KEY (datasheet_id) REFERENCES datasheets(id),
+		FOREIGN KEY (enhancement_id) REFERENCES enhancements(id)
 	);
 """
 )
 
 response = requests.get(
-	url='http://wahapedia.ru/wh40k10ed/Enhancements.csv'
+	url='http://wahapedia.ru/wh40k10ed/Datasheets_enhancements.csv'
 )
 
 decoded_content = response.content.decode('utf-8')
@@ -43,24 +41,19 @@ for i, row in enumerate(reader):
 	if i == 0:
 		continue
 
-	id = int(row[0])
-	cost = int(row[3])
+	datasheet_id = int(row[0])
+	enhancement_id = int(row[1])
 
 	cursor.execute(
 	"""
-	INSERT INTO enhancements (
-		id, faction_id, name, cost, detachment, legend, description
-	)
-	VALUES (%s, %s, %s, %s, %s, %s, %s)
-	ON DUPLICATE KEY UPDATE 
-		faction_id = VALUES(faction_id),
-		name = VALUES(name),
-		cost = VALUES(cost),
-		detachment = VALUES(detachment),
-		legend = VALUES(legend),
-		description = VALUES(description);
+		INSERT IGNORE INTO datasheets_enhancements (
+			datasheet_id, enhancement_id
+		)
+		VALUES (%s, %s)
+		ON DUPLICATE KEY UPDATE
+			datasheet_id = VALUES(datasheet_id);
 	""",
-		(id, row[1], row[2], cost, row[4], row[5], row[6])
+		(datasheet_id, enhancement_id)
 	)
 
 cursor.close()

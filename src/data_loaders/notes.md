@@ -17,6 +17,6 @@ Exection Order
 - [x] datasheets_unit_composition
 - [x] datasheets_models_cost
 - [x] datasheets_stratagems
-- [ ] datasheets_enhancements
+- [x] datasheets_enhancements
 - [ ] datasheets_detachement_abilities
 - [ ] datasheets_leader
