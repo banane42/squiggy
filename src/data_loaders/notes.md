@@ -19,4 +19,4 @@ Exection Order
 - [x] datasheets_stratagems
 - [x] datasheets_enhancements
 - [x] datasheets_detachement_abilities
-- [ ] datasheets_leader
+- [x] datasheets_leader
