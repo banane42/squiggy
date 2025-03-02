@@ -18,5 +18,5 @@ Exection Order
 - [x] datasheets_models_cost
 - [x] datasheets_stratagems
 - [x] datasheets_enhancements
-- [ ] datasheets_detachement_abilities
+- [x] datasheets_detachement_abilities
 - [ ] datasheets_leader
