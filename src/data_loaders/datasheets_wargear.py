@@ -46,7 +46,6 @@ conn = pymysql.connect(
 )
 
 cursor: pymysql.cursors.DictCursor = conn.cursor()
-# TODO TABLE CREATION
 cursor.execute(
 """
 	CREATE TABLE IF NOT EXISTS datasheets_wargear (
@@ -88,8 +87,11 @@ for i, row in enumerate(reader):
 	if i == 0:
 		continue
 
-	datasheet_id = int(row[0])
-	line = int(row[1])
+	try:
+		datasheet_id = int(row[0])
+		line = int(row[1])
+	except: continue
+
 	line_in_wargear = int(row[2])
 
 	range = None
@@ -104,40 +106,45 @@ for i, row in enumerate(reader):
 		range_type = 'melee'
 
 	attack_columns = parse_values_columns(row[8])
-	bs_ws = int(row[9])
+
+	bs_ws = None
+	try:
+		bs_ws = int(row[9][0])
+	except: pass
+
 	strength_columns = parse_values_columns(row[10])
-	ap = int(row[11])
+	ap = abs(int(row[11]))
 	damage_columns = parse_values_columns(row[12])
 
 	cursor.execute(
 	"""
 		INSERT INTO datasheets_wargear (
-			datasheet_id, line, line_in_wargear, dice, name, description, range, range_type,
+			datasheet_id, line, line_in_wargear, dice, name, description, `range`, range_type,
 			attack_type, attacks_value_static, attacks_dice_count, attacks_additional,
 			bs_ws, strength_type, strength_value_static, strength_dice_count, strength_additional,
 			ap, damage_type, damage_value_static, damage_dice_count, damage_additional
 		)
-		VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+		VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 		ON DUPLICATE KEY UPDATE
 			line_in_wargear = VALUES(line_in_wargear),
 			dice = VALUES(dice),
 			name = VALUES(name),
 			description = VALUES(description),
-			range = VALUES(range),
+			`range` = VALUES(`range`),
 			range_type = VALUES(range_type),
-			attack_type, = VALUES(attack_type),
-			attacks_value_static, = VALUES(attacks_value_static),
-			attacks_dice_count, = VALUES(attacks_dice_count),
+			attack_type = VALUES(attack_type),
+			attacks_value_static = VALUES(attacks_value_static),
+			attacks_dice_count = VALUES(attacks_dice_count),
 			attacks_additional = VALUES(attacks_additional),
-			bs_ws, = VALUES(bs_ws),
-			strength_type, = VALUES(strength_type),
-			strength_value_static, = VALUES(strength_value_static),
-			strength_dice_count, = VALUES(strength_dice_count),
+			bs_ws = VALUES(bs_ws),
+			strength_type = VALUES(strength_type),
+			strength_value_static = VALUES(strength_value_static),
+			strength_dice_count = VALUES(strength_dice_count),
 			strength_additional = VALUES(strength_additional),
-			ap, = VALUES(ap),
-			damage_type, = VALUES(damage_type),
-			damage_value_static, = VALUES(damage_value_static),
-			damage_dice_count, = VALUES(damage_dice_count),
+			ap = VALUES(ap),
+			damage_type = VALUES(damage_type),
+			damage_value_static = VALUES(damage_value_static),
+			damage_dice_count = VALUES(damage_dice_count),
 			damage_additional = VALUES(damage_additional);
 	""",
 		(
