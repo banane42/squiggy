@@ -32,3 +32,6 @@ class DataLoader():
 			print(f"Populating {self.table_name}")
 
 		self.populate_table(cursor=cursor, reader=reader)
+
+from .factions import FactionsDataLoader
+from .sources import SourcesDataLoader

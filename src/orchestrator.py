@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 import pymysql
-from data_loaders.factions import FactionsDataLoader
+import data_loaders
 
 load_dotenv()
 
@@ -15,9 +15,11 @@ conn = pymysql.connect(
 	autocommit=True
 )
 
-faction_loader = FactionsDataLoader()
+faction_loader = data_loaders.factions.FactionsDataLoader()
+source_loader = data_loaders.sources.SourcesDataLoader()
 
 verbose = True
 
 with conn.cursor() as cursor:
 	faction_loader.populate(cursor=cursor, verbose=verbose)
+	source_loader.populate(cursor=cursor, verbose=verbose)
