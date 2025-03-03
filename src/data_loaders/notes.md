@@ -1,8 +1,8 @@
 Exection Order
 
 - [x] factions.py
-- [ ] sources.py
-- [ ] stratagems
+- [x] sources.py
+- [x] stratagems
 - [ ] abilities
 - [ ] enhancements
 - [ ] detachement_abilities

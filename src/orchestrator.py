@@ -17,9 +17,11 @@ conn = pymysql.connect(
 
 faction_loader = data_loaders.factions.FactionsDataLoader()
 source_loader = data_loaders.sources.SourcesDataLoader()
+stratagem_loader = data_loaders.stratagems.StratagemsDataLoader()
 
 verbose = True
 
 with conn.cursor() as cursor:
 	faction_loader.populate(cursor=cursor, verbose=verbose)
 	source_loader.populate(cursor=cursor, verbose=verbose)
+	stratagem_loader.populate(cursor=cursor, verbose=verbose)
