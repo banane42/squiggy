@@ -1,22 +1,22 @@
 Exection Order
 
 - [x] factions.py
-- [x] sources.py
-- [x] stratagems
-- [x] abilities
-- [x] enhancements
-- [x] detachement_abilities
-- [x] last_update
+- [ ] sources.py
+- [ ] stratagems
+- [ ] abilities
+- [ ] enhancements
+- [ ] detachement_abilities
+- [ ] last_update
 
-- [x] datasheets.py
-- [x] datasheets_keywords.py
-- [x] datasheets_abilities.py
-- [x] datasheets_models.py
-- [x] datasheets_options
-- [x] datasheets_wargear
-- [x] datasheets_unit_composition
-- [x] datasheets_models_cost
-- [x] datasheets_stratagems
-- [x] datasheets_enhancements
-- [x] datasheets_detachement_abilities
-- [x] datasheets_leader
+- [ ] datasheets.py
+- [ ] datasheets_keywords.py
+- [ ] datasheets_abilities.py
+- [ ] datasheets_models.py
+- [ ] datasheets_options
+- [ ] datasheets_wargear
+- [ ] datasheets_unit_composition
+- [ ] datasheets_models_cost
+- [ ] datasheets_stratagems
+- [ ] datasheets_enhancements
+- [ ] datasheets_detachement_abilities
+- [ ] datasheets_leader
