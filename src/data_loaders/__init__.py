@@ -36,3 +36,4 @@ class DataLoader():
 from .factions import FactionsDataLoader
 from .sources import SourcesDataLoader
 from .stratagems import StratagemsDataLoader
+from .abilities import AbilitiesDataLoader

@@ -3,7 +3,7 @@ Exection Order
 - [x] factions.py
 - [x] sources.py
 - [x] stratagems
-- [ ] abilities
+- [x] abilities
 - [ ] enhancements
 - [ ] detachement_abilities
 - [ ] last_update
