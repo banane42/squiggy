@@ -1,9 +1,6 @@
-import requests
 import csv
 import pymysql
 import pymysql.cursors
-from dotenv import load_dotenv
-import os
 from datetime import datetime
 
 from data_loaders import DataLoader
