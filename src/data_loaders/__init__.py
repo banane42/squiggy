@@ -40,3 +40,4 @@ from .abilities import AbilitiesDataLoader
 from .enhancements import EnhancementsDataLoader
 from .detachement_abilities import DetachementAbilitiesDataLoader
 from .last_updated import LastUpdatedDataLoader
+from .datasheets import DatasheetsDataLoader

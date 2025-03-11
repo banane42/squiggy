@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import pymysql
 import data_loaders
+import data_loaders.datasheets
 
 load_dotenv()
 
@@ -22,6 +23,7 @@ abilities_loader = data_loaders.abilities.AbilitiesDataLoader()
 enhancements_loader = data_loaders.enhancements.EnhancementsDataLoader()
 detachement_abilities_loader = data_loaders.detachement_abilities.DetachementAbilitiesDataLoader()
 last_updated_loader = data_loaders.last_updated.LastUpdatedDataLoader()
+datasheets_loader = data_loaders.datasheets.DatasheetsDataLoader()
 
 verbose = True
 
@@ -33,3 +35,4 @@ with conn.cursor() as cursor:
 	enhancements_loader.populate(cursor=cursor, verbose=verbose)
 	detachement_abilities_loader.populate(cursor=cursor, verbose=verbose)
 	last_updated_loader.populate(cursor=cursor, verbose=verbose)
+	datasheets_loader.populate(cursor=cursor, verbose=verbose)

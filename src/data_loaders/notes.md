@@ -8,7 +8,7 @@ Exection Order
 - [x] detachement_abilities
 - [x] last_update
 
-- [ ] datasheets.py
+- [x] datasheets.py
 - [ ] datasheets_keywords.py
 - [ ] datasheets_abilities.py
 - [ ] datasheets_models.py
