@@ -6,7 +6,7 @@ Exection Order
 - [x] abilities
 - [x] enhancements
 - [x] detachement_abilities
-- [ ] last_update
+- [x] last_update
 
 - [ ] datasheets.py
 - [ ] datasheets_keywords.py

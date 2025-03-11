@@ -39,3 +39,4 @@ from .stratagems import StratagemsDataLoader
 from .abilities import AbilitiesDataLoader
 from .enhancements import EnhancementsDataLoader
 from .detachement_abilities import DetachementAbilitiesDataLoader
+from .last_updated import LastUpdatedDataLoader

@@ -1,10 +1,7 @@
 import csv
 import pymysql.cursors
-import requests
 import pymysql
-from dotenv import load_dotenv
 from data_loaders import DataLoader
-import os
 
 class EnhancementsDataLoader(DataLoader):
 	def __init__(self):

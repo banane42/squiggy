@@ -1,9 +1,3 @@
-import csv
-import pymysql.cursors
-import requests
-import pymysql
-from dotenv import load_dotenv
-import os
 from data_loaders import DataLoader
 
 class DetachementAbilitiesDataLoader(DataLoader):
