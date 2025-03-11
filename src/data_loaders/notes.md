@@ -4,8 +4,8 @@ Exection Order
 - [x] sources.py
 - [x] stratagems
 - [x] abilities
-- [ ] enhancements
-- [ ] detachement_abilities
+- [x] enhancements
+- [x] detachement_abilities
 - [ ] last_update
 
 - [ ] datasheets.py
