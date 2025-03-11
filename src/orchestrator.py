@@ -19,6 +19,7 @@ faction_loader = data_loaders.factions.FactionsDataLoader()
 source_loader = data_loaders.sources.SourcesDataLoader()
 stratagem_loader = data_loaders.stratagems.StratagemsDataLoader()
 abilities_loader = data_loaders.abilities.AbilitiesDataLoader()
+enhancements_loader = data_loaders.enhancements.EnhancementsDataLoader()
 
 verbose = True
 
@@ -27,3 +28,4 @@ with conn.cursor() as cursor:
 	source_loader.populate(cursor=cursor, verbose=verbose)
 	stratagem_loader.populate(cursor=cursor, verbose=verbose)
 	abilities_loader.populate(cursor=cursor, verbose=verbose)
+	enhancements_loader.populate(cursor=cursor, verbose=verbose)
