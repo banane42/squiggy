@@ -9,7 +9,7 @@ Exection Order
 - [x] last_update
 
 - [x] datasheets.py
-- [ ] datasheets_keywords.py
+- [x] datasheets_keywords.py
 - [ ] datasheets_abilities.py
 - [ ] datasheets_models.py
 - [ ] datasheets_options

@@ -39,7 +39,7 @@ class AbilitiesDataLoader(DataLoader):
 
 			cursor.execute(
 			"""
-				INSERT INTO Abilities (id, name, legend, faction_id, description)
+				INSERT INTO abilities (id, name, legend, faction_id, description)
 				VALUES (%s, %s, %s, %s, %s)
 				ON DUPLICATE KEY UPDATE
 					name = VALUES(name),

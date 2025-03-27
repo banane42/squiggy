@@ -24,6 +24,7 @@ enhancements_loader = data_loaders.enhancements.EnhancementsDataLoader()
 detachement_abilities_loader = data_loaders.detachement_abilities.DetachementAbilitiesDataLoader()
 last_updated_loader = data_loaders.last_updated.LastUpdatedDataLoader()
 datasheets_loader = data_loaders.datasheets.DatasheetsDataLoader()
+datasheets_keywords_loader = data_loaders.datasheets_keywords.DatasheetsKeywordsLoader()
 
 verbose = True
 
@@ -36,3 +37,4 @@ with conn.cursor() as cursor:
 	detachement_abilities_loader.populate(cursor=cursor, verbose=verbose)
 	last_updated_loader.populate(cursor=cursor, verbose=verbose)
 	datasheets_loader.populate(cursor=cursor, verbose=verbose)
+	datasheets_keywords_loader.populate(cursor=cursor, verbose=verbose)
