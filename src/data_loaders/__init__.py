@@ -42,3 +42,4 @@ from .detachement_abilities import DetachementAbilitiesDataLoader
 from .last_updated import LastUpdatedDataLoader
 from .datasheets import DatasheetsDataLoader
 from .datasheets_keywords import DatasheetsKeywordsLoader
+from .datasheets_abilities import DatasheetsAbilitiesDataLoader
